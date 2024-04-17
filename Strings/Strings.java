@@ -47,11 +47,13 @@ public class Strings {
         return sb.toString();
     }
 
+    // String str = "aaabbbbccddde";
+
     public static String compress(String str) {
         String newStr = "";
 
         for (int i = 0; i < str.length(); i++) {
-            Integer count = 1;
+            Integer count = 1;// 2
 
             while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
                 count++;
@@ -66,6 +68,18 @@ public class Strings {
         return newStr;
     }
 
+    public static int vowelsCount(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o'
+                    || ch == 'u') {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String args[]) {
         // String str = "Somnath";
         // System.out.println(isPalindrome(str));
@@ -77,10 +91,17 @@ public class Strings {
 
         // " hi, my name is somnath mandal"-- "Hi, My Name Is Somnath Mandal"
 
-        String sbr = "hi, my name is somnath mandal";
-        System.out.println(toUpperCase(sbr));
+        // String sbr = "hi, my name is somnath mandal";
+        // System.out.println(toUpperCase(sbr));
 
-        String str = "aaabbbbccddde";
-        System.out.println(compress(str));
+        // String str = "aaabbbbccddde";
+        // System.out.println(compress(str));
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.next();
+
+        System.out.println(vowelsCount(str));
+
     }
 }
